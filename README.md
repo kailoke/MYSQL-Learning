@@ -1,2 +1,2 @@
-# MYSQLex
+# MYSQL-Learning
 Learning MYSQL
