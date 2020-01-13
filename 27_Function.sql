@@ -47,6 +47,7 @@ SELECT getSalary("Lorentz")!
 
 
 # 案例2.2	根据部门名，返回部门的平均工资
+delimiter !
 create function getdeptAvg(deptName VARCHAR(20)) RETURNS DOUBLE
 BEGIN
 	SELECT AVG(salary) into @salary FROM employees e
