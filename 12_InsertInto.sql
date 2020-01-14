@@ -8,7 +8,7 @@
 # INSERT INTO
 /* 
 一、语法：
-	> insert into table(Fields) values(values)
+	> insert into table(Fields) values(value[]),(value[]), ...
 			> 省略表字段值则默认为全字段
 			> 支持多条values语句插入多行
 	> insert into table set field1=value1,field2=value2,...

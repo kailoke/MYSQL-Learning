@@ -17,7 +17,7 @@
 		> 修改列类型：modify column 字段 新类型
 		> 增加列：add column 字段 类型(长度) [first/after 字段]
 		> 删除列：drop column 字段
-	> 3.drop : drop dataBase if exists NAME
+	> 3.drop : drop table if exists NAME
 	> 4.复制表
 		> like 复制表结构
 		> select() 复制表结构+select数据
@@ -93,7 +93,7 @@ CREATE TABLE author_copy3
 SELECT * FROM author
 WHERE nation = '中国';
 
-# 4.4 复制表部分结构 WHERE FALSE
+# 4.4 复制表的部分结构：select (结构[]) from table WHERE FALSE(0)
 CREATE TABLE author_copy4
 SELECT id,authorName
 FROM author WHERE FALSE;

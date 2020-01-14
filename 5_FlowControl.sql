@@ -17,10 +17,21 @@
 			when condition2 then state2
 			else stateElse									
 		END [CASE](函数体需要END CASE，和BEGIN END区分)
-三、循环结构
-	> 1. while
+		
+三、循环结构：iterate `标签` = continue	leave `标签` = break;
+	> 1. while - do
+				标签 ：while 循环条件 do
+								循环体...;
+							end while [标签];
 	> 2. loop
-	> 3. repeat
+				标签 : loop
+									循环体;
+							 end loop [标签];
+	> 3. repeat - until
+				标签 : repeat
+								 循环体;
+							 until 结束条件
+							 end repeat [标签];
 */
 
 # 一、IF函数
@@ -77,4 +88,27 @@ begin
 	END CASE;
 end
 # call procedure
-CALL showGrade(90);
+call showGrade(90);
+
+
+# 四、循环结构
+# 批量插入，根据输入次数插入重复记录到admin表中
+drop procedure if exists whileInsert;
+delimiter !
+create procedure `whileInsert`(in `while` tinyint)
+begin
+	declare `count` tinyint default 0;
+	A:while `count` <= `while` DO
+		set `count` := `count` + 1;
+		if mod(count,2) = 0 then iterate A;
+		end if;
+		insert into admin values (null,concat("插入",`count`),`count`);
+	END WHILE A;
+end !
+
+call whileInsert(10);
+delete from admin where id >=8;
+
+
+
+

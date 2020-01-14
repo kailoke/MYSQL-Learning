@@ -15,7 +15,7 @@
 	> delete 可以回滚
 	
 三、DDL：表重置 truncate table 表名;
-	> 不允许搭配where，直接重置表为创建状态
+	> 直接重置表为创建状态
 	> truncate后，表的自增列将被重置
 	> truncate 没有返回值
 	> truncate 不能回滚
