@@ -45,10 +45,8 @@
 六、关键字savepoint：设置回滚目标点
 	> roolback to savePoint：回滚点之前的操作将会被提交
 	> 语法:	
-		语句1;
-		savePoint PointName;
-		语句2;
-		rollback to PointName;
+		create savePoint: savePoint PointName;
+		rollback        : rollback to PointName;
 */
 
 /*	存储引擎
